@@ -1,14 +1,28 @@
 % FRET Style
 % 
-% (c) Buffalo Bill
-%
+% Matt Luckcuck and Marie Farrell
+% 09/09/2021
 % 
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
 \ProvidesPackage{mypackage}
   [2021/09/09 v0.01 LaTeX package for typeseting FRETISH]
 
-%\RequirePackage{whateverwe need}
+% Acronym for FRET
+\RequirePackage{glossaries}
+\newacronym{fret}{FRET}{Formal Requirements Elicitation Tool} 
+
+% Command for typsetting FRETISH
 \newcommand{\fretish}{\textsc{fretish}}
+
+% Colours for FRETISH sentences
+\RequirePackage{xcolor}
+\definecolor{ForestGreen}{rgb}{0.0,0.4,0.0}
+
+
+\newcommand{\condition}[1]{\textcolor{orange}{if #1}}
+\newcommand{\component}[1]{\textcolor{ForestGreen}{#1}}
+\newcommand{\response}[1]{\textcolor{violet}{satisfy #1}}
+
 
 
 \endinput
