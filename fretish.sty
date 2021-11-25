@@ -1,11 +1,15 @@
 % FRET Style
 % 
 % Matt Luckcuck and Marie Farrell
-% 09/09/2021
+% 25/11/2021
 % 
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
 \ProvidesPackage{fretish}
   [2021/09/09 v0.01 LaTeX package for typeseting FRETISH]
+
+% To make the starred version work
+\usepackage{suffix}
+
 
 % Acronym for FRET
 \RequirePackage{glossaries}
@@ -19,22 +23,21 @@
 \definecolor{ForestGreen}{rgb}{0.0,0.4,0.0}
 \definecolor{Mahogany}{rgb}{0.75, 0.25, 0.0}
 
-\newcommand{\Condition}{\texttt{\textcolor{orange}{condition}}}
-\newcommand{\Component}{\texttt{\textcolor{ForestGreen}{component}}}
-\newcommand{\Response}{\texttt{\textcolor{violet}{response}}}
-\newcommand{\Timing}{\texttt{\textcolor{cyan}{timing}}}
-\newcommand{\Scope}{\texttt{\textcolor{Mahogany}{scope}}}
+\newcommand{\Condition}{{\small\texttt{\textcolor{orange}{condition}}}}
+\newcommand{\Component}{{\small\texttt{\textcolor{ForestGreen}{component}}}}
+\newcommand{\Response}{{\small\texttt{\textcolor{violet}{response}}}}
+\newcommand{\Timing}{{\small\texttt{\textcolor{cyan}{timing}}}}
+\newcommand{\Scope}{{\small\texttt{\textcolor{Mahogany}{scope}}}}
 
 \newcommand{\fretishComponents}{\Scope{} \ \Condition{} \ \Component{}\ \allowbreak shall  \ \Timing{}\  \Response{}}
 \newcommand{\fretishComponentsSmall}{{\small\Scope{} \ \Condition{} \ \Component{}\ \allowbreak shall  \ \Timing{}\  \Response{}}}
 
-
-\newcommand{\condition}[1]{\textcolor{orange}{\texttt{#1}}}
-\newcommand{\component}[1]{\textcolor{ForestGreen}{\texttt{#1}}}
-\newcommand{\response}[1]{\textcolor{violet}{satisfy \texttt{#1}}}
-\newcommand{\timing}[1]{\textcolor{cyan}{\texttt{#1}}}
-\newcommand{\scope}[1]{\textcolor{Mahogany}{in \texttt{#1} mode}}
-
+\newcommand{\condition}[1]{{\small\textcolor{orange}{\texttt{#1}}}}
+\newcommand{\component}[1]{{\small\textcolor{ForestGreen}{\texttt{#1}}}}
+\newcommand{\response}[1]{{\small\textcolor{violet}{satisfy \texttt{#1}}}}
+\WithSuffix\newcommand\response*[1]{{\small\textcolor{violet}{\texttt{#1}}}}
+\newcommand{\timing}[1]{{\small\textcolor{cyan}{\texttt{#1}}}}
+\newcommand{\scope}[1]{{\small\textcolor{Mahogany}{in \texttt{#1} mode}}}
 
 
 
