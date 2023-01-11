@@ -1,42 +1,42 @@
 % FRET Style
 % 
 % Matt Luckcuck and Marie Farrell
-% 25/11/2021
+% 09/09/2021
+% update ML: 14/12/22
+% update ML: 11/01/23
 % 
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
 \ProvidesPackage{fretish}
-  [2021/09/09 v0.01 LaTeX package for typeseting FRETISH]
+  [2022/12/14 v0.1 LaTeX package for typeseting FRETISH]
 
-% To make the starred version work
-\usepackage{suffix}
-
+\RequirePackage{xspace}
 
 % Acronym for FRET
 \RequirePackage{glossaries}
 \newacronym{fret}{FRET}{Formal Requirements Elicitation Tool} 
 
 % Command for typsetting FRETISH
-\newcommand{\fretish}{\textsc{fretish}}
+\newcommand{\fretish}{\textsc{fretish}\xspace}
 
 % Colours for FRETISH sentences
 \RequirePackage{xcolor}
 \definecolor{ForestGreen}{rgb}{0.0,0.4,0.0}
 \definecolor{Mahogany}{rgb}{0.75, 0.25, 0.0}
 
-\newcommand{\Condition}{{\small\texttt{\textcolor{orange}{condition}}}}
-\newcommand{\Component}{{\small\texttt{\textcolor{ForestGreen}{component}}}}
-\newcommand{\Response}{{\small\texttt{\textcolor{violet}{response}}}}
-\newcommand{\Timing}{{\small\texttt{\textcolor{cyan}{timing}}}}
-\newcommand{\Scope}{{\small\texttt{\textcolor{Mahogany}{scope}}}}
+\newcommand{\Condition}{{\texttt{\textcolor{orange}{condition}}}\xspace}
+\newcommand{\Component}{{\texttt{\textcolor{ForestGreen}{component}}}\xspace}
+\newcommand{\Response}{{\texttt{\textcolor{violet}{response}}}\xspace}
+\newcommand{\Timing}{{\texttt{\textcolor{cyan}{timing}}}\xspace}
+\newcommand{\Scope}{{\texttt{\textcolor{Mahogany}{scope}}}\xspace}
 
-\newcommand{\fretishComponents}{\Scope{} \ \Condition{} \ \Component{}\ \allowbreak \texttt{shall}  \ \Timing{}\  \Response{}}
-\newcommand{\fretishComponentsSmall}{{\small\Scope{} \ \Condition{} \ \Component{}\ \allowbreak \texttt{shall}  \ \Timing{}\  \Response{}}}
-\newcommand{\condition}[1]{{\small\textcolor{orange}{\texttt{#1}}}}
-\newcommand{\component}[1]{{\small\textcolor{ForestGreen}{\texttt{#1}}}}
-\newcommand{\response}[1]{{\small\textcolor{violet}{\texttt{satisfy} \texttt{#1}}}}
-\WithSuffix\newcommand\response*[1]{{\small\textcolor{violet}{\texttt{#1}}}}
-\newcommand{\timing}[1]{{\small\textcolor{cyan}{\texttt{#1}}}}
-\newcommand{\scope}[1]{{\small\textcolor{Mahogany}{in \texttt{#1} mode}}}
+\newcommand{\fretishComponents}{\Scope{} \ \Condition{} \ \Component{}\ \allowbreak shall  \ \Timing{}\  \Response{}}
+\newcommand{\fretishComponentsSmall}{{\small\Scope{} \ \Condition{} \ \Component{}\ \allowbreak shall  \ \Timing{}\  \Response{}}}
+
+\newcommand{\condition}[1]{{\small\textcolor{orange}{\texttt{#1}}}\xspace}
+\newcommand{\component}[1]{{\small\textcolor{ForestGreen}{\texttt{#1}}}\xspace}
+\newcommand{\response}[1]{{\small\textcolor{violet}{satisfy \texttt{#1}}}\xspace}
+\newcommand{\timing}[1]{{\small\textcolor{cyan}{\texttt{#1}}}\xspace}
+\newcommand{\scope}[1]{{\small\textcolor{Mahogany}{in \texttt{#1} mode}}\xspace}
 
 
 
