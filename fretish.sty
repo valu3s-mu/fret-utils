@@ -4,12 +4,16 @@
 % 09/09/2021
 % update ML: 14/12/22
 % update ML: 11/01/23
+% update ML: 22/01/23
 % 
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
 \ProvidesPackage{fretish}
-  [2022/12/14 v0.1 LaTeX package for typeseting FRETISH]
+  [2023/01/23 v0.2 LaTeX package for typeseting FRETISH]
 
 \RequirePackage{xspace}
+% To make the starred version work
+\usepackage{suffix}
+
 
 % Acronym for FRET
 \RequirePackage{glossaries}
@@ -32,12 +36,12 @@
 \newcommand{\fretishComponents}{\Scope{} \ \Condition{} \ \Component{}\ \allowbreak shall  \ \Timing{}\  \Response{}}
 \newcommand{\fretishComponentsSmall}{{\small\Scope{} \ \Condition{} \ \Component{}\ \allowbreak shall  \ \Timing{}\  \Response{}}}
 
-\newcommand{\condition}[1]{{\small\textcolor{orange}{\texttt{#1}}}\xspace}
-\newcommand{\component}[1]{{\small\textcolor{ForestGreen}{\texttt{#1}}}\xspace}
-\newcommand{\response}[1]{{\small\textcolor{violet}{satisfy \texttt{#1}}}\xspace}
-\newcommand{\timing}[1]{{\small\textcolor{cyan}{\texttt{#1}}}\xspace}
-\newcommand{\scope}[1]{{\small\textcolor{Mahogany}{in \texttt{#1} mode}}\xspace}
-
+\newcommand{\condition}[1]{{\textcolor{orange}{\texttt{#1}}}\xspace}
+\newcommand{\component}[1]{{\textcolor{ForestGreen}{\texttt{#1}}}\xspace}
+\newcommand{\response}[1]{{\textcolor{violet}{\texttt{satisfy} \texttt{#1}}}}
+\WithSuffix\newcommand\response*[1]{{\textcolor{violet}{\texttt{#1}}}}
+\newcommand{\timing}[1]{{\textcolor{cyan}{\texttt{#1}}}\xspace}
+\newcommand{\scope}[1]{{\textcolor{Mahogany}{in \texttt{#1} mode}}\xspace}
 
 
 \endinput
